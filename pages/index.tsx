@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { questions } from "../data";
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
 type Question = {
   id: number;
@@ -93,6 +94,21 @@ const Home: NextPage = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">MBA 702 Study Helper</h1>
           <div className="h-1 w-32 bg-blue-500 mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="flex gap-4 mb-8">
+          <Link href="/flashcards" className="flex-1">
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer">
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">Flashcards</h2>
+              <p className="text-gray-600">Practice with interactive flashcards</p>
+            </div>
+          </Link>
+          <Link href="/exam" className="flex-1">
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer">
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">Take Exam</h2>
+              <p className="text-gray-600">Test your knowledge with a full exam</p>
+            </div>
+          </Link>
         </div>
         
         {!isSubmitted ? (
