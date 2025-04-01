@@ -122,16 +122,16 @@ const FlashCards: NextPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">MBA 702 Flashcards</h1>
-          <div className="h-1 w-32 bg-blue-500 mx-auto rounded-full"></div>
+      <main className="max-w-4xl mx-auto px-4 py-4 sm:py-8">
+        <div className="text-center mb-6 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">MBA 702 Flashcards</h1>
+          <div className="h-1 w-24 sm:w-32 bg-blue-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Subject Filter */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
-          <div className="flex flex-col space-y-3">
-            <label htmlFor="subject-filter" className="text-lg font-semibold text-gray-700">
+        <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-8">
+          <div className="flex flex-col space-y-2 sm:space-y-3">
+            <label htmlFor="subject-filter" className="text-base sm:text-lg font-semibold text-gray-700">
               Filter by Topic
             </label>
             <div className="relative">
@@ -139,7 +139,7 @@ const FlashCards: NextPage = () => {
                 id="subject-filter"
                 value={selectedSubject}
                 onChange={(e) => setSelectedSubject(e.target.value)}
-                className="w-full p-3 rounded-lg border-2 border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 text-lg appearance-none cursor-pointer hover:border-blue-300 transition-colors"
+                className="w-full p-2 sm:p-3 rounded-lg border-2 border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 text-base sm:text-lg appearance-none cursor-pointer hover:border-blue-300 transition-colors"
               >
                 <option value="all">All Topics</option>
                 {subjects.map(subject => (
@@ -152,7 +152,7 @@ const FlashCards: NextPage = () => {
                 </svg>
               </div>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-xs sm:text-sm text-gray-500">
               {selectedSubject === 'all' 
                 ? `Showing all ${shuffledCards.length} flashcards`
                 : `Showing ${shuffledCards.length} flashcards from ${selectedSubject}`
@@ -162,34 +162,34 @@ const FlashCards: NextPage = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-6">
-          <div className="flex justify-between mb-2">
+        <div className="mb-4 sm:mb-6">
+          <div className="flex justify-between mb-1 sm:mb-2">
             <span className="text-sm text-gray-600">Progress</span>
             <span className="text-sm text-gray-600">{Math.round(progress)}%</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2.5">
+          <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-blue-500 h-2.5 rounded-full transition-all duration-500"
+              className="bg-blue-500 h-2 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
         </div>
 
         {/* Streak Counter */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           <div className="inline-flex items-center space-x-2">
-            <span className="text-lg font-semibold text-gray-700">Current Streak:</span>
-            <span className="text-2xl font-bold text-blue-500">{streak}</span>
-            <span className="text-sm text-gray-500">(Best: {maxStreak})</span>
+            <span className="text-base sm:text-lg font-semibold text-gray-700">Current Streak:</span>
+            <span className="text-xl sm:text-2xl font-bold text-blue-500">{streak}</span>
+            <span className="text-xs sm:text-sm text-gray-500">(Best: {maxStreak})</span>
           </div>
         </div>
 
-        <p className="text-center text-gray-600 mb-6">
+        <p className="text-center text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
           Card {currentIndex + 1} of {shuffledCards.length}
         </p>
 
         <div 
-          className={`bg-white rounded-xl shadow-lg p-6 mb-6 cursor-pointer select-none transition-all duration-200 ${
+          className={`bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 cursor-pointer select-none transition-all duration-200 ${
             showReward ? 'scale-105 shadow-xl' : ''
           }`}
           style={{ transform }}
@@ -198,20 +198,20 @@ const FlashCards: NextPage = () => {
           onTouchEnd={handleTouchEnd}
           onClick={() => setShowAnswer(!showAnswer)}
         >
-          <div className="min-h-[300px] flex flex-col justify-center">
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-gray-500">{currentCard.subject}</span>
+          <div className="min-h-[200px] sm:min-h-[300px] flex flex-col justify-center">
+            <div className="flex justify-between items-center mb-3 sm:mb-4">
+              <span className="text-sm sm:text-base text-gray-500">{currentCard.subject}</span>
               {knownCards.has(currentCard.id) && (
                 <span className="text-green-500">✓ Known</span>
               )}
             </div>
             <div className="text-center">
               {!showAnswer ? (
-                <h2 className="text-2xl font-semibold text-gray-800">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
                   {currentCard.front}
                 </h2>
               ) : (
-                <p className="text-xl text-gray-700 whitespace-pre-line">
+                <p className="text-lg sm:text-xl text-gray-700 whitespace-pre-line">
                   {currentCard.back}
                 </p>
               )}
@@ -219,7 +219,7 @@ const FlashCards: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex justify-between gap-4">
+        <div className="grid grid-cols-2 sm:flex sm:justify-between gap-2 sm:gap-4">
           <button
             onClick={() => {
               if (currentIndex > 0) {
@@ -228,7 +228,7 @@ const FlashCards: NextPage = () => {
               }
             }}
             disabled={currentIndex === 0}
-            className={`flex-1 py-4 px-6 rounded-lg font-semibold transition ${
+            className={`py-3 px-4 sm:py-4 sm:px-6 rounded-lg text-sm sm:text-base font-semibold transition ${
               currentIndex === 0
                 ? 'bg-gray-200 text-gray-400'
                 : 'bg-blue-500 text-white hover:bg-blue-600'
@@ -238,19 +238,19 @@ const FlashCards: NextPage = () => {
           </button>
           <button
             onClick={() => setShowAnswer(!showAnswer)}
-            className="flex-1 py-4 px-6 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition"
+            className="py-3 px-4 sm:py-4 sm:px-6 bg-green-500 text-white rounded-lg text-sm sm:text-base font-semibold hover:bg-green-600 transition"
           >
             {showAnswer ? 'Show Question' : 'Show Answer'}
           </button>
           <button
             onClick={handleKnowThis}
-            className={`flex-1 py-4 px-6 rounded-lg font-semibold transition ${
+            className={`py-3 px-4 sm:py-4 sm:px-6 rounded-lg text-sm sm:text-base font-semibold transition ${
               knownCards.has(currentCard.id)
                 ? 'bg-green-500 text-white hover:bg-green-600'
                 : 'bg-yellow-500 text-white hover:bg-yellow-600'
             }`}
           >
-            {knownCards.has(currentCard.id) ? 'Already Known!' : 'I Know This!'}
+            {knownCards.has(currentCard.id) ? 'Known!' : 'I Know This!'}
           </button>
           <button
             onClick={() => {
@@ -260,7 +260,7 @@ const FlashCards: NextPage = () => {
               }
             }}
             disabled={currentIndex === shuffledCards.length - 1}
-            className={`flex-1 py-4 px-6 rounded-lg font-semibold transition ${
+            className={`py-3 px-4 sm:py-4 sm:px-6 rounded-lg text-sm sm:text-base font-semibold transition ${
               currentIndex === shuffledCards.length - 1
                 ? 'bg-gray-200 text-gray-400'
                 : 'bg-blue-500 text-white hover:bg-blue-600'
