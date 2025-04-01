@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { questions } from "../data";
+import { questions } from "../data/exam-questions";
 import { useState, useEffect } from "react";
 import Link from 'next/link';
 

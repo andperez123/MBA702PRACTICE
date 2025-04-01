@@ -1,7 +1,7 @@
 // pages/exam.tsx
 import { useState, useEffect } from "react";
 import type { NextPage } from "next";
-import { questions as allQuestions } from "../data";
+import { questions as allQuestions } from "../data/exam-questions";
 import { useRouter } from 'next/router';
 
 // Utility function to randomly select N questions from an array

@@ -193,5 +193,125 @@ export const flashcards: Flashcard[] = [
     subject: "Futures",
     front: "How do storage costs affect futures pricing?",
     back: "Higher storage costs increase futures prices due to the additional expense of holding the asset."
+  },
+  {
+    id: 31,
+    subject: "Bonds",
+    front: "Why are long-term bonds more sensitive to interest rate changes than short-term bonds?",
+    back: "Long-term bonds have higher duration, meaning their cash flows occur further in the future and are more impacted by changes in interest rates."
+  },
+  {
+    id: 32,
+    subject: "Bonds",
+    front: "Why do lower-coupon bonds have greater interest rate risk than higher-coupon bonds?",
+    back: "Lower-coupon bonds have more of their value in the final payment, making them more sensitive to changes in interest rates."
+  },
+  {
+    id: 33,
+    subject: "Bonds",
+    front: "Why is a multivariate model preferred over CAPM for bond valuation?",
+    back: "CAPM excludes bond-specific risks like maturity, liquidity, and default. A multivariate model includes these, providing more accurate yield estimates."
+  },
+  {
+    id: 34,
+    subject: "Bonds",
+    front: "What is the bond pricing formula using present value?",
+    back: "Price = Σ(Coupon / (1 + r)^t) + (Par Value / (1 + r)^n), where r is the market yield and t = time."
+  },
+  {
+    id: 35,
+    subject: "Bonds",
+    front: "What is reinvestment risk in bonds and why does it matter?",
+    back: "It’s the risk that coupons can't be reinvested at the same YTM, which can cause actual returns to fall short of YTM assumptions."
+  },
+  {
+    id: 36,
+    subject: "Bonds",
+    front: "How do call and convertible provisions affect bond yields?",
+    back: "Callable bonds require higher yields due to prepayment risk. Convertible bonds offer lower yields due to their upside potential."
+  },
+  {
+    id: 37,
+    subject: "Bonds",
+    front: "How does the secondary market enhance bond liquidity and affect yields?",
+    back: "A liquid secondary market reduces yields by making bonds easier to sell. Illiquid bonds need higher yields to attract buyers."
+  },
+  {
+    id: 38,
+    subject: "Stocks",
+    front: "When is each dividend discount model appropriate: no-growth, constant growth, variable growth?",
+    back: "No-growth: stable firms (utilities). Constant growth: mature firms. Variable growth: firms transitioning from high to stable growth."
+  },
+  {
+    id: 39,
+    subject: "Stocks",
+    front: "Why does the Gordon Growth Model fail when r ≤ g?",
+    back: "The denominator (r - g) becomes 0 or negative, causing the price to become infinite or undefined."
+  },
+  {
+    id: 40,
+    subject: "Stocks",
+    front: "What is stock equilibrium and how does CAPM help achieve it?",
+    back: "Equilibrium means expected return = required return. CAPM adjusts required return based on beta to reflect market risk."
+  },
+  {
+    id: 41,
+    subject: "Stocks",
+    front: "What is the CAPM formula and what does it measure?",
+    back: "Required Return = rf + β(rm - rf). It measures expected return based on systematic market risk."
+  },
+  {
+    id: 42,
+    subject: "Options",
+    front: "What do S·N(d₁) and X·e^(-rt)·N(d₂) represent in the Black-Scholes Model?",
+    back: "S·N(d₁) = PV of expected stock value; X·e^(-rt)·N(d₂) = PV of expected exercise payment."
+  },
+  {
+    id: 43,
+    subject: "Options",
+    front: "Why do deep ITM and deep OTM options have low time value?",
+    back: "Deep ITM options have limited additional upside; deep OTM options are unlikely to become profitable."
+  },
+  {
+    id: 44,
+    subject: "Options",
+    front: "What is a covered call strategy?",
+    back: "Owning the stock and selling a call option. It limits upside but provides income from the call premium."
+  },
+  {
+    id: 45,
+    subject: "Futures",
+    front: "What is position offsetting in futures contracts?",
+    back: "It involves entering an opposite futures position to close out an existing one, avoiding physical delivery."
+  },
+  {
+    id: 46,
+    subject: "Futures",
+    front: "What is the formula for futures pricing with yield and storage costs?",
+    back: "F = Spot × (1 + r + storage cost - yield)^t, adjusting for time value and carrying costs."
+  },
+  {
+    id: 47,
+    subject: "Futures",
+    front: "What is symmetric vs. asymmetric hedging in derivatives?",
+    back: "Futures provide symmetric hedging (lock in price). Options provide asymmetric hedging (limit downside, keep upside)."
+  },
+  {
+    id: 48,
+    subject: "Futures",
+    front: "How does daily settlement in futures reduce credit risk?",
+    back: "Gains and losses are settled daily via margin accounts, preventing buildup of uncollateralized losses."
+  },
+  {
+    id: 49,
+    subject: "Options",
+    front: "Why does more time to maturity increase call option value?",
+    back: "Longer time allows more chance for favorable price movement, increasing time value and option price."
+  },
+  {
+    id: 50,
+    subject: "Options",
+    front: "Why must Black-Scholes be adjusted for American options and dividends?",
+    back: "It assumes no early exercise and no payouts, which isn't valid for American or dividend-paying stocks."
   }
 ];
